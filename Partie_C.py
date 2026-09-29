@@ -30,4 +30,29 @@ cmax = max(c)
 print("La valeur de concentration en éthanol maximale d'Alice est de {:0.4f} mol/L".format(cmax))
 
 tmax = t[np.ndarray.argmax(c)]
-print("L'instant auquel la concentration en éthanol est maximale dans le sang d’Alice est t = {:0.1f} min".format(tmax))
+print("L'instant auquel la concentration en éthanol est maximale dans le sang d’Alice est t = {:0.1f} 
+min".format(tmax))
+
+Climmass = 0.5 # en g/L
+Climmol = Climmass/Meth # en mol/L
+print(Climmol)
+
+if Climmol > cmax : 
+    print(f"Alice peut conduire {tmax:0.1f} minutes après avoir consommé ses deux bières ({Climmol}>{cmax})")
+else :
+    print(f"Alice ne peut pas conduire après {tmax:0.1f} minutes, {cmax:0.4f}>{Climmol:0.4f}")
+
+import numpy as np
+
+idx_cmax = np.argmax(c)
+
+
+# 2. On cherche les indices après le pic (t > t_cmax) ET où la concentration est autorisée (c < Climmol)
+indx = np.where((t > tmax) & (c < Climmol))[0]
+
+if len(indx) > 0 :
+    idx_tok = indx[0]
+    tok = t[idx_tok]
+    print("Le temps au bout duquel Alice aura le droit de prendre le volant est t = {:0.1f} min".format(tok))
+else:
+    print("Alice n'atteint jamais la limite Climmol dans l'intervalle de temps fourni.")
