@@ -25,7 +25,7 @@ Les  résultats obtenus sont regroupés dans le tableau ci-dessous:
        <td>0,2</td>
        <td>0,1</td>
    </tr>
-</table>
+</table> 
 
 **Question 1.** Utiliser  ces  données  pour  prouver  graphiquement que  la  réaction  d’absorption  de  l’alcool  dans  le  sang  suit  une  loi  cinétique  d’ordre  $1$,  et déterminer sa constante de vitesse $k_1$ (en précisant son unité).
 
